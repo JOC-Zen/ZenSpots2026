@@ -35,6 +35,7 @@ export const SpaceCardEnhanced: React.FC<SpaceCardProps> = ({ space, onSelect, c
     <div 
       className={`card cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${className}`}
       onClick={handleCardClick}
+      data-testid="space-card"
     >
       {/* Image Section */}
       <div className="relative overflow-hidden rounded-t-xl">
@@ -136,7 +137,7 @@ export const SpaceCardEnhanced: React.FC<SpaceCardProps> = ({ space, onSelect, c
         )}
 
         {/* Action Button */}
-        <button className="w-full btn btn-primary">
+        <button className="w-full btn btn-primary" data-testid="btn-ver-disponibilidad">
           <ClockIcon className="h-4 w-4 mr-2" />
           Ver disponibilidad
         </button>

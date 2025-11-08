@@ -49,8 +49,8 @@ const TimeSlotManager: React.FC<{
             <h3 className="font-bold text-lg">Disponibilidad para {new Date(selectedDate + 'T00:00:00').toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })}</h3>
             <p className="text-sm text-gray-500 mb-4">Selecciona las horas en las que tu espacio está disponible para alquilar.</p>
             <div className="flex space-x-2 mb-4">
-                <button onClick={() => handleSelectAll(true)} className="text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-md">Habilitar todo</button>
-                <button onClick={() => handleSelectAll(false)} className="text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-md">Bloquear todo</button>
+                <button onClick={() => handleSelectAll(true)} data-testid="btn-enable-all" className="text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-md">Habilitar todo</button>
+                <button onClick={() => handleSelectAll(false)} data-testid="btn-block-all" className="text-sm bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1 rounded-md">Bloquear todo</button>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-96 overflow-y-auto pr-2">
                 {allDaySlots.map(slot => {
@@ -118,7 +118,7 @@ export const ManageAvailabilityPage: React.FC<ManageAvailabilityPageProps> = ({ 
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="max-w-5xl mx-auto">
-                <button onClick={onBack} className="mb-6 text-sm font-medium text-zen-primary-dark hover:underline flex items-center">
+                <button onClick={onBack} data-testid="btn-back-host" className="mb-6 text-sm font-medium text-zen-primary-dark hover:underline flex items-center">
                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                     Volver al Panel de Anfitrión
                 </button>
@@ -129,9 +129,9 @@ export const ManageAvailabilityPage: React.FC<ManageAvailabilityPageProps> = ({ 
                     <div className="md:col-span-1">
                         <div className="bg-white p-4 rounded-xl shadow-sm border border-zen-border">
                             <div className="flex items-center justify-between mb-4">
-                                <button onClick={() => handleMonthChange(-1)} className="p-1 rounded-full hover:bg-gray-100">&larr;</button>
+                                <button onClick={() => handleMonthChange(-1)} data-testid="btn-month-prev" className="p-1 rounded-full hover:bg-gray-100">&larr;</button>
                                 <h2 className="font-bold text-lg">{currentMonth.toLocaleString('es-ES', { month: 'long', year: 'numeric' })}</h2>
-                                <button onClick={() => handleMonthChange(1)} className="p-1 rounded-full hover:bg-gray-100">&rarr;</button>
+                                <button onClick={() => handleMonthChange(1)} data-testid="btn-month-next" className="p-1 rounded-full hover:bg-gray-100">&rarr;</button>
                             </div>
                             <div className="grid grid-cols-7 gap-1 text-center text-sm">
                                 {weekDays.map(day => <div key={day} className="font-semibold text-gray-500">{day}</div>)}
@@ -150,6 +150,7 @@ export const ManageAvailabilityPage: React.FC<ManageAvailabilityPageProps> = ({ 
                                             key={dateString}
                                             onClick={() => setSelectedDate(dateString)}
                                             className={`p-2 rounded-full aspect-square transition-colors font-medium ${isSelected ? 'ring-2 ring-zen-primary' : ''} ${statusClass}`}
+                                            data-testid={`date-${dateString}`}
                                         >
                                             {day.getDate()}
                                         </button>
@@ -165,7 +166,7 @@ export const ManageAvailabilityPage: React.FC<ManageAvailabilityPageProps> = ({ 
                 </div>
 
                  <div className="mt-8 text-right">
-                    <button onClick={() => onSave(space.id, availability)} className="bg-zen-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-zen-primary-dark transition-colors">
+                    <button onClick={() => onSave(space.id, availability)} data-testid="btn-save-availability" className="bg-zen-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-zen-primary-dark transition-colors">
                         Guardar Cambios
                     </button>
                 </div>

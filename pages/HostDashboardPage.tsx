@@ -96,7 +96,7 @@ export const HostDashboardPage: React.FC<HostDashboardPageProps> = ({ allSpaces,
             <div className="bg-white p-6 rounded-xl shadow-sm border border-zen-border">
                  <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-bold text-zen-charcoal">Mis Espacios</h2>
-                    <button onClick={() => onNavigate('new-listing')} className="bg-zen-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-zen-primary-dark transition-colors text-sm">
+                    <button onClick={() => onNavigate('new-listing')} data-testid="btn-add-listing" className="bg-zen-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-zen-primary-dark transition-colors text-sm">
                         + Añadir Espacio
                     </button>
                 </div>
@@ -112,7 +112,7 @@ export const HostDashboardPage: React.FC<HostDashboardPageProps> = ({ allSpaces,
                                     </div>
                                 </div>
                                 <div>
-                                    <button onClick={() => onNavigate('manage-availability', space.id)} className="bg-zen-secondary text-zen-primary-dark font-bold py-2 px-4 rounded-md hover:bg-zen-primary hover:text-white transition-colors">
+                                    <button onClick={() => onNavigate('manage-availability', space.id)} data-testid="btn-manage-availability" className="bg-zen-secondary text-zen-primary-dark font-bold py-2 px-4 rounded-md hover:bg-zen-primary hover:text-white transition-colors">
                                         Gestionar Calendario
                                     </button>
                                 </div>

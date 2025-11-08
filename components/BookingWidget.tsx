@@ -127,13 +127,14 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ space, bookings, o
                         onChange={(e) => setSelectedDate(e.target.value)}
                         min={new Date().toISOString().split('T')[0]}
                         className="w-full border-gray-200 rounded-lg shadow-sm focus:border-zen-primary focus:ring-zen-primary bg-gray-100 pl-10"
+                        data-testid="booking-date"
                     />
                 </div>
                 
                 <div className="relative">
                      <label htmlFor="start-time" className="sr-only">Hora</label>
                      <ClockIcon className="pointer-events-none w-5 h-5 text-gray-400 absolute top-1/2 transform -translate-y-1/2 left-3" />
-                     <select id="start-time" value={startTime} onChange={e => setStartTime(e.target.value)} className="w-full text-sm border-gray-200 rounded-lg shadow-sm focus:border-zen-primary focus:ring-zen-primary bg-gray-100 pl-10" disabled={availableTimeSlots.length === 0}>
+                     <select id="start-time" value={startTime} onChange={e => setStartTime(e.target.value)} className="w-full text-sm border-gray-200 rounded-lg shadow-sm focus:border-zen-primary focus:ring-zen-primary bg-gray-100 pl-10" disabled={availableTimeSlots.length === 0} data-testid="start-time-select">
                         <option value="" disabled>Selecciona Hora</option>
                         {availableTimeSlots.map(time => <option key={time} value={time}>{time}</option>)}
                     </select>
@@ -144,7 +145,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ space, bookings, o
                     <div className="relative">
                          <label htmlFor="end-time" className="sr-only">Hora de fin</label>
                          <ClockIcon className="pointer-events-none w-5 h-5 text-gray-400 absolute top-1/2 transform -translate-y-1/2 left-3" />
-                         <select id="end-time" value={endTime} onChange={e => setEndTime(e.target.value)} className="w-full text-sm border-gray-200 rounded-lg shadow-sm focus:border-zen-primary focus:ring-zen-primary bg-gray-100 pl-10" disabled={availableEndTimes.length === 0}>
+                         <select id="end-time" value={endTime} onChange={e => setEndTime(e.target.value)} className="w-full text-sm border-gray-200 rounded-lg shadow-sm focus:border-zen-primary focus:ring-zen-primary bg-gray-100 pl-10" disabled={availableEndTimes.length === 0} data-testid="end-time-select">
                             <option value="" disabled>Selecciona Hora Fin</option>
                             {availableEndTimes.map(time => <option key={time} value={time}>{time}</option>)}
                         </select>
@@ -155,7 +156,7 @@ export const BookingWidget: React.FC<BookingWidgetProps> = ({ space, bookings, o
             {error && <p className="text-red-500 text-xs mt-2">{error}</p>}
             {availableTimeSlots.length === 0 && <p className="text-amber-600 text-xs mt-2 text-center bg-amber-50 p-2 rounded-md">No hay horas disponibles.</p>}
 
-            <button onClick={handleBooking} className="mt-6 w-full bg-zen-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-zen-primary-dark transition-colors disabled:bg-gray-400">
+            <button onClick={handleBooking} className="mt-6 w-full bg-zen-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-zen-primary-dark transition-colors disabled:bg-gray-400" data-testid="btn-book-now">
                 {user ? `Reservar Ahora (${totalPrice.toFixed(2)}€)` : 'Inicia sesión para reservar'}
             </button>
 

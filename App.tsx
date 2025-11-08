@@ -289,8 +289,6 @@ const App: React.FC = () => {
                 onNavigateHome={handleNavigateHome} 
                 onNavigateToBrowse={() => handleNavigateToBrowse()} 
                 onNavigate={handleNavigate} 
-                onToggleHomeView={() => setHomeViewMode(prev => prev === 'desktop' ? 'mobile' : prev === 'mobile' ? 'auto' : 'desktop')}
-                homeViewMode={homeViewMode}
             />
             <main className="flex-grow">
                 {renderContent()}

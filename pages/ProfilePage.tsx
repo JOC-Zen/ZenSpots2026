@@ -54,7 +54,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigate, allSpaces,
                     </div>
                      {user.isHost && (
                         <div className="mt-6 border-t border-zen-border pt-6">
-                            <button onClick={() => onNavigate('host-dashboard')} className="w-full bg-zen-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-zen-primary-dark transition-colors">
+                            <button onClick={() => onNavigate('host-dashboard')} data-testid="btn-host-dashboard" className="w-full bg-zen-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-zen-primary-dark transition-colors">
                                Ir al Panel de Anfitrión
                             </button>
                         </div>
