@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="gmed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FCE4EC"/>
+      <stop offset="100%" stop-color="#F8BBD0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gmed)"/>
+  <rect x="130" y="150" width="540" height="340" rx="22" fill="#FFFFFF" stroke="#F06292" stroke-width="4"/>
+  <path d="M400 240 l0 120 M340 300 l120 0" stroke="#F06292" stroke-width="14" stroke-linecap="round"/>
+  <text x="50%" y="520" text-anchor="middle" font-family="Inter, Arial" font-size="32" fill="#880E4F">Medicina Natural · Muestra</text>
+</svg>

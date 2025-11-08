@@ -1,0 +1,7 @@
+{
+  "name": "ZenSpots: Zen Rooms on Demand",
+  "description": "An Airbnb-like platform for renting therapy rooms, consultation offices, and alternative medicine studios by the hour. Users can search, filter, and view available spaces.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="gm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E0F7FA"/>
+      <stop offset="100%" stop-color="#B2EBF2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gm)"/>
+  <rect x="140" y="160" width="520" height="320" rx="24" fill="#FFFFFF" stroke="#4DD0E1" stroke-width="4"/>
+  <rect x="220" y="260" width="360" height="60" rx="12" fill="#E0F7FA" stroke="#4DD0E1"/>
+  <text x="50%" y="520" text-anchor="middle" font-family="Inter, Arial" font-size="32" fill="#006064">Espacio de Masajes · Muestra</text>
+</svg>
