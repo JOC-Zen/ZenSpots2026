@@ -32,16 +32,19 @@ export const HomePage: React.FC<HomePageProps> = ({ onSearch, onNavigate }) => {
 
     return (
         <div>
-            {/* Hero Section */}
-            <section className="bg-white">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-zen-charcoal">ZenSpots: Tu Santuario a Demanda</h1>
-                    <p className="mt-4 text-lg text-zen-charcoal-light max-w-2xl mx-auto">Encuentra el espacio perfecto para tu práctica o consulta.</p>
-                    
-                    <form onSubmit={handleSearchSubmit} className="mt-8 max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-4 border border-zen-border grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+            {/* Hero con imagen */}
+            <section className="hero">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center hero-content">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">ZenSpots</h1>
+                    <p className="mt-4 text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Consultorios holísticos bajo demanda</p>
+
+                    <form
+                        onSubmit={handleSearchSubmit}
+                        className="mt-8 max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-4 border border-zen-border grid grid-cols-1 md:grid-cols-4 gap-4 items-center"
+                    >
                         <div className="relative md:col-span-2">
-                             <LocationPinIcon className="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" />
-                             <input
+                            <LocationPinIcon className="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" />
+                            <input
                                 type="text"
                                 value={location}
                                 onChange={(e) => setLocation(e.target.value)}
@@ -49,9 +52,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onSearch, onNavigate }) => {
                                 className="w-full bg-gray-100 border-transparent rounded-md focus:ring-0 focus:border-zen-primary pl-10"
                             />
                         </div>
-                         <div className="relative">
-                             <CalendarIcon className="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" />
-                             <input
+                        <div className="relative">
+                            <CalendarIcon className="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" />
+                            <input
                                 type="date"
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
@@ -68,20 +71,27 @@ export const HomePage: React.FC<HomePageProps> = ({ onSearch, onNavigate }) => {
                             </select>
                         </div>
                     </form>
-                     <div className="mt-4 flex justify-center items-center space-x-4">
-                        <button type="submit" onClick={handleSearchSubmit} className="bg-zen-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-zen-primary-dark transition flex items-center space-x-2">
+                    <div className="mt-6 flex justify-center items-center space-x-4">
+                        <button
+                            type="submit"
+                            onClick={handleSearchSubmit}
+                            className="bg-zen-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-zen-primary-dark transition flex items-center space-x-2"
+                        >
                             <SearchIcon className="w-5 h-5" />
                             <span>Buscar un Espacio</span>
                         </button>
-                         <button onClick={handleListSpace} className="bg-white text-zen-charcoal font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition border border-zen-border flex items-center space-x-2">
-                             <ListIcon className="w-5 h-5" />
-                             <span>Listar tu Espacio</span>
-                         </button>
+                        <button
+                            onClick={handleListSpace}
+                            className="bg-white text-zen-charcoal font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition border border-zen-border flex items-center space-x-2"
+                        >
+                            <ListIcon className="w-5 h-5" />
+                            <span>Listar tu Espacio</span>
+                        </button>
                     </div>
                 </div>
             </section>
             
-            {/* How it Works Section */}
+            {/* Cómo funciona */}
             <section className="py-16 bg-zen-secondary">
                 <div className="container mx-auto px-6 text-center">
                     <h2 className="text-3xl font-bold text-zen-charcoal mb-12">Cómo Funciona ZenSpots</h2>
